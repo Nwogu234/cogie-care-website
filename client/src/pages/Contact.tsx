@@ -22,8 +22,23 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const enquiryType = String(data.get("enquiryType") || "General enquiry");
+    const subject = `Website enquiry (${enquiryType}) - ${data.get("name") || ""}`;
+    const body = [
+      `Name: ${data.get("name") || ""}`,
+      `Email: ${data.get("email") || ""}`,
+      `Phone: ${data.get("phone") || ""}`,
+      `Enquiry type: ${enquiryType}`,
+      `Organisation: ${data.get("organisation") || ""}`,
+      "",
+      String(data.get("message") || ""),
+    ].join("\n");
+    window.location.href = `mailto:info@cogiecareservices.co.uk?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
-    toast.success("Thank you for your enquiry. We will be in touch shortly.");
+    toast.success("Opening your email app to send your enquiry...");
   };
 
   return (
@@ -193,6 +208,7 @@ export default function Contact() {
                           <input
                             type="text"
                             required
+                            name="name"
                             placeholder="Your full name"
                             className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground placeholder:text-warm-gray/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm"
                             style={{ fontFamily: "var(--font-body)" }}
@@ -205,6 +221,7 @@ export default function Contact() {
                           <input
                             type="email"
                             required
+                            name="email"
                             placeholder="your@email.com"
                             className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground placeholder:text-warm-gray/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm"
                             style={{ fontFamily: "var(--font-body)" }}
@@ -219,6 +236,7 @@ export default function Contact() {
                           </label>
                           <input
                             type="tel"
+                            name="phone"
                             placeholder="Your phone number"
                             className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground placeholder:text-warm-gray/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm"
                             style={{ fontFamily: "var(--font-body)" }}
@@ -230,6 +248,7 @@ export default function Contact() {
                           </label>
                           <select
                             required
+                            name="enquiryType"
                             defaultValue=""
                             className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm"
                             style={{ fontFamily: "var(--font-body)" }}
@@ -250,6 +269,7 @@ export default function Contact() {
                         </label>
                         <input
                           type="text"
+                          name="organisation"
                           placeholder="Your organisation name"
                           className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground placeholder:text-warm-gray/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm"
                           style={{ fontFamily: "var(--font-body)" }}
@@ -263,6 +283,7 @@ export default function Contact() {
                         <textarea
                           required
                           rows={5}
+                          name="message"
                           placeholder="Please tell us how we can help..."
                           className="w-full px-4 py-3 rounded-lg border border-cream-dark bg-cream/50 text-foreground placeholder:text-warm-gray/50 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-colors text-sm resize-none"
                           style={{ fontFamily: "var(--font-body)" }}
