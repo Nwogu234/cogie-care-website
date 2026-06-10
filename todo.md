@@ -1,0 +1,58 @@
+
+- [x] Resolve merge conflicts from upgrade (keep existing Home page)
+- [x] White/inverse logo variation for application form
+- [x] GOV.UK-style multi-step application form UI (11 sections)
+- [x] Step 1: Position Details
+- [x] Step 2: Personal Details
+- [x] Step 3: Additional Information
+- [x] Step 4: Criminal Record Declaration
+- [x] Step 5: Education & Qualifications
+- [x] Step 6: Training & Certifications
+- [x] Step 7: Employment History
+- [x] Step 8: Relevant Experience
+- [x] Step 9: Availability
+- [x] Step 10: References
+- [x] Step 11: Review & Declaration + Submit
+- [x] PDF generation of completed application form
+- [x] Email submission to recruitment@petrichorltd.co.uk
+- [x] Add /apply route to navigation
+- [x] Write vitest tests for the application form backend
+- [x] Database schema for job postings table
+- [x] Database schema for applications table
+- [x] tRPC routes for job CRUD (admin)
+- [x] tRPC routes for application submission and listing
+- [x] AI-powered job post formatting (natural text → Indeed-style)
+- [x] Careers landing page with job listings
+- [x] Individual job detail page with shareable URL
+- [x] Application form linked to specific job posting
+- [x] Admin dashboard - job postings management
+- [x] Admin dashboard - view submitted applications
+- [x] Admin dashboard - AI job creation flow
+- [x] Write vitest tests for new backend features
+- [x] Add admin link to navbar (visible only for logged-in admin users)
+- [x] Make Admin link always visible in navbar (not behind login)
+- [x] Admin page shows login prompt if not authenticated
+- [x] Database schema for admin invites table
+- [x] Admin invite system - generate invite links
+- [x] Admin invite acceptance flow
+- [x] Admin team management UI (view/remove admins)
+- [x] Add CV/resume file upload to application form
+- [x] Store uploaded CVs in S3
+- [x] Save CV URL in applications database table
+- [x] Admin dashboard - view filled application form details
+- [x] Admin dashboard - download/view uploaded CVs
+- [x] Write vitest tests for CV upload feature
+- [x] CV-first application flow: upload CV first, AI parses and pre-fills form fields
+- [x] Postcode lookup for address fields: input postcode, pick from list or enter manually
+- [x] Change address history from 5 years to 3 years with timeline gap validation
+- [x] Full-page admin application detail view (replace modal popup)
+- [x] Add per-step validation to all form sections with inline error messages
+- [x] SMTP email service using IONOS (Nodemailer)
+- [x] Applicant confirmation email on application submission
+- [x] Admin notification email on new application received
+- [x] Server-side PDF generation for application export
+- [x] PDF download button on admin application detail page
+- [x] Write vitest tests for email and PDF features
+- [x] Enhance property photos (brightness, contrast, sharpness)
+- [x] Upload enhanced photos to CDN
+- [x] Update Accommodation page with real property photos and 4 ensuite rooms info
